@@ -29,6 +29,7 @@ Votre projet doit répondre aux critères suivants.
 npx create-react-app s4webavance_tp2_reactclI
 npm install bootstrap --save
 npm install react-icons --save
+npm i react-router-dom
 ```
 - [ ] • Un menu de navigation entre les pages (Accueil / produits) 
 - [ ] • Pour  la  conception  (CSS),  vous  pouvez  utiliser  le  framework  bootstrap (vanilla, aucun modèle autorisé) ou développer votre propre css. 

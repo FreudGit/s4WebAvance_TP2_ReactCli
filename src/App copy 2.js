@@ -57,14 +57,14 @@ function App() {
 
 
       <Routes>
-                    <Route path='/Produits' element={tasks.length > 0 ? (
+                    <Route path='/Products' element={tasks.length > 0 ? (
                         <ManyTasks
                         items={tasks}
                         onDeleteMany={deleteTask}
                         onToggleMany={toggleReminder}
                       />
                     ) : (
-                        'Aucun produit à afficher'
+                        'No Tasks To Show'
                     )} />
 
                     <Route path='/' element={<Presentation />} />
@@ -72,7 +72,11 @@ function App() {
 
 
 
-     
+      <ManyTasks
+        items={tasks}
+        onDeleteMany={deleteTask}
+        onToggleMany={toggleReminder}
+      />
     </div>
     </BrowserRouter>
 
