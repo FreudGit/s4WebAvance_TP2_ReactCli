@@ -1,7 +1,8 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
+import { CiEdit } from "react-icons/ci"; // Import de l'icône d'édition
 
-const SingleTask = ({ item, onDelete, onToggle }) => {
+const SingleTask = ({ item, onDelete, onToggle, onEdit }) => {
   return (
     <div className="col-md-6 mb-3">
       <div className="card position-relative">
@@ -10,16 +11,24 @@ const SingleTask = ({ item, onDelete, onToggle }) => {
           <p className="card-text text-muted small">{item.description}</p>
           <p className="card-text small">Prix: {item.prix} $</p>
         </div>
-        <FaTimes
-          style={{
-            color: "red",
-            cursor: "pointer",
-            position: "absolute",
-            top: "0.5rem",
-            right: "0.5rem",
-          }}
-          onClick={() => onDelete(item.id)}
-        />
+        <div className="card-footer d-flex justify-content-end">
+          <button
+            className="btn btn-primary btn-sm me-1"
+            onClick={() => onEdit(item)}
+          >
+            <CiEdit /> Éditer
+          </button>
+          <FaTimes
+            style={{
+              color: "red",
+              cursor: "pointer",
+              position: "absolute",
+              top: "0.5rem",
+              right: "0.5rem",
+            }}
+            onClick={() => onDelete(item.id)}
+          />
+        </div>
       </div>
     </div>
   );
