@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+Techniques avancées en programmation Web 
+582-41F-MA 
+ 
+ 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TP 2 
+Création d’un site web à l’aide de la librairie React.js  
 
-## Available Scripts
 
-In the project directory, you can run:
+par:  François Hébert (e2296133) 
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
+## DOCUMENTATION
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+RÉFÉRENCES:
 
-### `npm test`
+- LIEN VERS LE GITHUB: **[GIT DU PROJET](https://github.com/fhmaisonneuve/s4WebAvance_TP2_ReactCli)**
+- LIEN VERS LE PROJET(WEBDEV): **[]()** 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+ ---  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## REQUIS DÉMANDÉS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Votre projet doit répondre aux critères suivants. 
+- [x] Créer un projet React.js CLI 
+```
+npx create-react-app s4webavance_tp2_reactclI
+npm install bootstrap --save
+npm install react-icons --save
+```
+- [ ] • Un menu de navigation entre les pages (Accueil / produits) 
+- [ ] • Pour  la  conception  (CSS),  vous  pouvez  utiliser  le  framework  bootstrap (vanilla, aucun modèle autorisé) ou développer votre propre css. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Deux Livraisons : 
+- [ ] • Premier  scénario  -  Créez  une  version  de  production  avec  le  premier scénario et la publiez sur WebDev. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [ ] • Deuxième scénario - Maintenez le même projet et les mêmes fonctionnalités mais maintenant vous allez le tester avec un serveur JSON (simulé),  cette  dernière  version  doit  être  publiée  sur  GitHub.  
+- [ ] Enregistrez une  courte  vidéo  de  votre  écran  (max  3  min)  avec  le  projet  en  cours d'exécution sur votre environnement local. Présentez toutes les pages et fonctions au fur et à mesure que le côté serveur change. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [ ] Envoyez la vidéo avec le projet
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   
+- [ ] 15.Enregistrez le projet avec une extension ZIP et ajouter la documentation dansla racine (1pt)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+DOCUMENTATION
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-- LIEN VERS LE VIDEO: **[SCREENRECORD]()**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- LIEN VERS LE GITHUB: **[GIT DU PROJET](https://github.com/fhmaisonneuve/s4CadricielWeb_TP1_Laravel)**
+- LIEN VERS LE PROJET(WEBDEV): **[https://e2296133.webdev.cmaisonneuve.qc.ca/cadricielwebtp1/](https://e2296133.webdev.cmaisonneuve.qc.ca/cadricielwebtp1/)** 
