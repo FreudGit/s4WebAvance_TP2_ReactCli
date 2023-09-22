@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const PresentationPage = () => {
   return (
@@ -22,8 +22,8 @@ const PresentationPage = () => {
         <div className="col-md-6">
           <h2>Nos Produits</h2>
           <p>
-            Découvrez notre vaste gamme de produits de haute qualité, allant
-            des dernières technologies aux produits de style de vie. Que vous
+            Découvrez notre vaste gamme de produits de haute qualité, allant des
+            dernières technologies aux produits de style de vie. Que vous
             recherchiez des gadgets électroniques, des vêtements à la mode ou
             d'autres articles passionnants, vous les trouverez tous ici.
           </p>
@@ -34,11 +34,12 @@ const PresentationPage = () => {
         <h2>Contactez-nous</h2>
         <p>
           Si vous avez des questions, des commentaires ou avez besoin
-          d'assistance, n'hésitez pas à nous contacter. Notre équipe de
-          support client est là pour vous aider.
+          d'assistance, n'hésitez pas à nous contacter. Notre équipe de support
+          client est là pour vous aider.
         </p>
         <p>
-          Email : <a href="mailto:contact@votresite.com">contact@votresite.com</a>
+          Email :{" "}
+          <a href="mailto:contact@votresite.com">contact@votresite.com</a>
         </p>
       </div>
     </div>

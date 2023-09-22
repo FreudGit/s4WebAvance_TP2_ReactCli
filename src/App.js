@@ -1,22 +1,17 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 //import localData from "./d2.json";
 import localData from "./db.json";
-
 import ManyTasks from "./components/ManyTasks";
 import Presentation from "./components/Presentation";
-
-// import  'jquery/dist/jquery.min.js';
-
 import Nav from "./components/Nav";
 
 function App() {
   //GLOBAL
   const [tasks, setTasks] = useState([]);
-  console.log(localData);
+  // console.log(localData);
+
   // LOAD données dans setTasks
   useEffect(() => {
     const getTasks = async () => {
@@ -28,6 +23,7 @@ function App() {
     getTasks();
   }, []);
 
+  //FETCH TASKS LOCAL
   const fetchLocal = async () => {
     return localData["produits"];
   };
@@ -49,33 +45,29 @@ function App() {
 
   return (
     <BrowserRouter>
+      <div>
+        <Nav />
 
-    <div>
-      <Nav />
-      {/* Le reste du contenu de votre application */}
+        <Routes>
+          <Route
+            path="/Produits"
+            element={
+              tasks.length > 0 ? (
+                <ManyTasks
+                  items={tasks}
+                  onDeleteMany={deleteTask}
+                  onToggleMany={toggleReminder}
+                />
+              ) : (
+                "Aucun produit à afficher"
+              )
+            }
+          />
 
-
-
-      <Routes>
-                    <Route path='/Produits' element={tasks.length > 0 ? (
-                        <ManyTasks
-                        items={tasks}
-                        onDeleteMany={deleteTask}
-                        onToggleMany={toggleReminder}
-                      />
-                    ) : (
-                        'Aucun produit à afficher'
-                    )} />
-
-                    <Route path='/' element={<Presentation />} />
-                </Routes>
-
-
-
-     
-    </div>
+          <Route path="/" element={<Presentation />} />
+        </Routes>
+      </div>
     </BrowserRouter>
-
   );
 }
 
