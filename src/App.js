@@ -1,13 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-//import localData from "./d2.json";
 import localData from "./db.json";
 import ManyTasks from "./components/ManyTasks";
 import Presentation from "./components/Presentation";
 import ProductModale from "./components/ProductModale";
-//import CenteredComponent from "./components/CenteredComponent";
-
 import Nav from "./components/Nav";
 
 function App() {
@@ -16,6 +13,7 @@ function App() {
   // console.log(localData);
 
   const [showModal, setShowModal] = useState(false);
+  const [showModal_ReadOnly, setShowModal_ReadOnly] = useState(false);
 
   const [currentItem, setCurrentItem] = useState(false);
 
@@ -65,19 +63,19 @@ function App() {
   const deleteItemLocal = async (id) => {
     console.log("delete", id);
     //setShowAddForm(!showAddForm); // Invert the value of showAddForm
-  //   await fetch(`http://localhost:5000/tasks/${id}`,{
-  //     method: 'DELETE',
-  // })
-  setTasks(tasks.filter((task) => task.id !== id))
-
+    //   await fetch(`http://localhost:5000/tasks/${id}`,{
+    //     method: 'DELETE',
+    // })
+    setTasks(tasks.filter((task) => task.id !== id));
 
     // setShowModal(true);
   };
 
-  const editItem = async (item) => {
-    //console.log(item);
+  const editItem = async (item, readOnly) => {
+    console.log(readOnly);
     setCurrentItem(item);
     setShowModal(true);
+    setShowModal_ReadOnly(readOnly);
   };
 
   //UPDATE
@@ -98,6 +96,7 @@ function App() {
 
         <ProductModale
           showModal={showModal}
+          readOnly={showModal_ReadOnly}
           onOpenModal={openProductModal}
           onCloseModal={closeProductModal}
           product={currentItem}
@@ -110,7 +109,7 @@ function App() {
                 <ManyTasks
                   items={tasks}
                   onDeleteMany={deleteItemLocal}
-                  onEditMany={editItem}
+                  onViewMany={editItem}
                   onToggleMany={toggleReminder}
                 />
               ) : (

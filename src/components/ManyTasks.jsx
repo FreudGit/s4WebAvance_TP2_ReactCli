@@ -1,6 +1,6 @@
 import SingleTask from "./SingleTask";
 
-const ManyTasks = ({ items, onDeleteMany, onToogleMany, onEditMany }) => {
+const ManyTasks = ({ items, onDeleteMany, onToogleMany, onViewMany }) => {
   return (
     <>
       {items.map((item) => (
@@ -9,8 +9,7 @@ const ManyTasks = ({ items, onDeleteMany, onToogleMany, onEditMany }) => {
           key={item.id}
           onDelete={onDeleteMany}
           onToogle={onToogleMany}
-          onEdit={onEditMany}
-
+          onView={onViewMany}
         />
       ))}
     </>

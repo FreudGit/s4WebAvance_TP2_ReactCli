@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-function ProductModale({ showModal, onCloseModal, onSubmit, product }) {
+function ProductModale({
+  showModal,
+  onCloseModal,
+  onSubmit,
+  product,
+  readOnly = true,
+}) {
   const [formData, setFormData] = useState({
     nom: "",
     description: "",
     prix: 0,
-    categorie: "Langage de programmation",
+    categorie: "",
   });
 
   useEffect(() => {
@@ -14,7 +20,7 @@ function ProductModale({ showModal, onCloseModal, onSubmit, product }) {
         nom: product.nom || "",
         description: product.description || "",
         prix: product.prix || 0,
-        categorie: product.categorie || "Langage de programmation",
+        categorie: product.categorie || "",
       });
     }
   }, [product]);
@@ -68,6 +74,7 @@ function ProductModale({ showModal, onCloseModal, onSubmit, product }) {
                       name="nom"
                       value={formData.nom}
                       onChange={handleChange}
+                      readOnly={readOnly}
                     />
                   </div>
                   <div className="mb-3">
@@ -81,6 +88,7 @@ function ProductModale({ showModal, onCloseModal, onSubmit, product }) {
                       value={formData.description}
                       onChange={handleChange}
                       rows="4"
+                      readOnly={readOnly}
                     ></textarea>
                   </div>
                   <div className="mb-3">
@@ -94,6 +102,7 @@ function ProductModale({ showModal, onCloseModal, onSubmit, product }) {
                       name="prix"
                       value={formData.prix}
                       onChange={handleChange}
+                      readOnly={readOnly}
                     />
                   </div>
                   <div className="mb-3">
@@ -107,13 +116,14 @@ function ProductModale({ showModal, onCloseModal, onSubmit, product }) {
                       name="categorie"
                       value={formData.categorie}
                       onChange={handleChange}
+                      readOnly={readOnly}
                     />
                   </div>
-                  <input
+                  {/* <input
                     type="submit"
                     className="btn btn-primary"
                     value="Modifier"
-                  />
+                  /> */}
                 </form>
               </div>
               <div className="modal-footer">
@@ -125,9 +135,11 @@ function ProductModale({ showModal, onCloseModal, onSubmit, product }) {
                 >
                   Fermer
                 </button>
-                <button type="button" className="btn btn-primary">
-                  Enregistrer
-                </button>
+                {!readOnly && (
+                  <button type="button" className="btn btn-primary">
+                    Enregistrer
+                  </button>
+                )}
               </div>
             </div>
           </div>
