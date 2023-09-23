@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTimes, FaAngleDoubleRight } from "react-icons/fa";
+import { FaTimes, FaAngleDoubleRight} from "react-icons/fa";
 import { CiEdit } from "react-icons/ci"; // Import de l'icône d'édition
 
 const SingleTask = ({ item, onDelete, onView }) => {
@@ -11,29 +11,34 @@ const SingleTask = ({ item, onDelete, onView }) => {
           <p className="card-text text-muted small">{item.description}</p>
           <p className="card-text small">Prix: {item.prix} $</p>
         </div>
-        <div className="card-footer d-flex justify-content-end">
-          <button
-            className="btn btn-primary btn-sm me-1"
-            onClick={() => onView(item, 'EDIT')}
-          >
-            <CiEdit /> Éditer
-          </button>
-          <button
-            className="btn btn-primary btn-sm me-1"
-            onClick={() => onView(item, 'VIEW')}
-          >
-            <FaAngleDoubleRight /> Détails
-          </button>
-          <FaTimes
-            style={{
-              color: "red",
-              cursor: "pointer",
-              position: "absolute",
-              top: "0.5rem",
-              right: "0.5rem",
-            }}
-            onClick={() => onDelete(item.id)}
-          />
+        <div className="card-footer d-flex justify-content-between align-items-center">
+          <div>
+            <p className="card-text small text-secondary">Catégorie: {item.categorie}</p>
+          </div>
+          <div>
+            <button
+              className="btn btn-primary btn-sm me-1"
+              onClick={() => onView(item, 'EDIT')}
+            >
+              <CiEdit /> Éditer
+            </button>
+            <button
+              className="btn btn-primary btn-sm me-1"
+              onClick={() => onView(item, 'VIEW')}
+            >
+              <FaAngleDoubleRight /> Détails
+            </button>
+            <FaTimes
+              style={{
+                color: "red",
+                cursor: "pointer",
+                position: "absolute",
+                top: "0.5rem",
+                right: "0.5rem",
+              }}
+              onClick={() => onDelete(item.id)}
+            />
+          </div>
         </div>
       </div>
     </div>

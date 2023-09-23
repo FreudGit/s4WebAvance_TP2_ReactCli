@@ -1,4 +1,6 @@
 import SingleTask from "./SingleTask";
+import { FaPlus} from "react-icons/fa";
+
 
 const ManyTasks = ({
   items,
@@ -12,7 +14,7 @@ const ManyTasks = ({
         <div className="col-auto px-4">
           {/* Bouton "Ajouter" en haut à droite de la liste des produits */}
           <button className="btn btn-primary float-end " onClick={onAdd}>
-            Ajouter
+          <FaPlus /> Ajouter
           </button>
         </div>
       </div>
