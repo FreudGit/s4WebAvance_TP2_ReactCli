@@ -13,7 +13,7 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [showModal_ReadOnly, setShowModal_ReadOnly] = useState(false);
   const [showModal_Mode, setShowModal_Mode] = useState(false);
-  const [currentItem, setCurrentItem] = useState(false);
+  const [currentItem, setCurrentItem] = useState(null);
 
   ////////////////////////////////////////////////////////
   /////////////   LOAD DATAS
@@ -68,6 +68,32 @@ function App() {
     const newTask = { id, ...task };
     setTasks([...tasks, newTask]);
     setCurrentItem(null);
+  };
+
+  ////////////////////////////////////////////////////////
+  /////////////   EDIT DATAS
+
+  const updateItemLocal = (item) => {
+    console.log("func updateItemLocal", item);
+    setTasks(tasks.map((itemMap) => (itemMap.id === item.id ? item : itemMap)));
+
+    console.log(tasks);
+    setCurrentItem(null);
+  };
+
+  const updateItemREMOTE = async (item) => {
+    // console.log(id)
+    const taskToToggle = await fetchItemsRemote(item.id);
+    //const updTask = {...taskToToggle, reminder: !taskToToggle.reminder}
+    const res = await fetch(`http://localhost:5000/tasks/${item.id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(item),
+    });
+    const data = await res.json();
+    setTasks(tasks.map((itemMap) => (itemMap.id === item.id ? item : itemMap)));
   };
 
   ////////////////////////////////////////////////////////
@@ -130,6 +156,7 @@ function App() {
           onOpenModal={openProductModal}
           onCloseModal={closeProductModal}
           onAdd={addItemLocal}
+          onUpdate={updateItemLocal}
           product={currentItem}
           mode={showModal_Mode}
         />

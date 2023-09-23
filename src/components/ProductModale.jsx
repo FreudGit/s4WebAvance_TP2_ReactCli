@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 function ProductModale({
   showModal,
   onCloseModal,
-  onSubmit,
+  onUpdate,
   product,
   mode = "VIEW",
   onAdd,
@@ -22,6 +22,7 @@ function ProductModale({
     
     if (product) {
       setFormData({
+        id: product.id || "",
         nom: product.nom || "",
         description: product.description || "",
         prix: product.prix || 0,
@@ -49,15 +50,16 @@ function ProductModale({
   const handleSubmit = (e) => {
     console.log("handleSubmit");
     e.preventDefault();
-    onAdd(formData);
-    // Vous pouvez gérer l'envoi du formulaire ici en fonction du mode.
-    console.log("Formulaire soumis avec les données :", formData);
+    if (mode === "ADD") {
+      onAdd(formData);
+    }else{
+      onUpdate(formData);
+    }
     onCloseModal();
   };
 
   return (
     <div>
-      {/* Composant au centre */}
       {showModal && (
         <div
           className="modal"
@@ -83,6 +85,7 @@ function ProductModale({
               </div>
               <div className="modal-body">
                 <form className="add-form" onSubmit={handleSubmit}>
+                  
                   <div className="mb-3">
                     <label htmlFor="nom" className="form-label">
                       Nom
@@ -95,6 +98,7 @@ function ProductModale({
                       value={formData.nom}
                       onChange={handleChange}
                       readOnly={mode === "VIEW"} // Lecture seule uniquement en mode READONLY
+                      required
                     />
                   </div>
                   <div className="mb-3">
@@ -109,6 +113,7 @@ function ProductModale({
                       onChange={handleChange}
                       rows="4"
                       readOnly={mode === "VIEW"} // Lecture seule uniquement en mode READONLY
+                      required
                     ></textarea>
                   </div>
                   <div className="mb-3">
@@ -123,6 +128,7 @@ function ProductModale({
                       value={formData.prix}
                       onChange={handleChange}
                       readOnly={mode === "READONLY"} // Lecture seule uniquement en mode READONLY
+                      required
                     />
                   </div>
                   <div className="mb-3">
@@ -137,6 +143,7 @@ function ProductModale({
                       value={formData.categorie}
                       onChange={handleChange}
                       readOnly={mode === "VIEW"} // Lecture seule uniquement en mode READONLY
+                      required
                     />
                   </div>
                   {mode !== "VIEW" && (
