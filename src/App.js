@@ -7,6 +7,7 @@ import Presentation from "./components/Presentation";
 import ProductModale from "./components/ProductModale";
 import Nav from "./components/Nav";
 
+
 function App() {
   //GLOBAL
   const [tasks, setTasks] = useState([]);
@@ -186,7 +187,6 @@ function App() {
             }
           />
         </Routes>
-        {/* MODALE AJOUT PRODUIT */}
       </div>
     </BrowserRouter>
   );
