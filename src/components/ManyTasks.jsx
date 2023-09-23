@@ -1,18 +1,33 @@
 import SingleTask from "./SingleTask";
 
-const ManyTasks = ({ items, onDeleteMany, onToogleMany, onViewMany }) => {
+const ManyTasks = ({
+  items,
+  onDeleteMany,
+  onViewMany,
+  onAdd,
+}) => {
   return (
-    <>
-      {items.map((item) => (
-        <SingleTask
-          item={item}
-          key={item.id}
-          onDelete={onDeleteMany}
-          onToogle={onToogleMany}
-          onView={onViewMany}
-        />
-      ))}
-    </>
+    <div className="mt-4 ">
+      <div className="row justify-content-end">
+        <div className="col-auto px-4">
+          {/* Bouton "Ajouter" en haut à droite de la liste des produits */}
+          <button className="btn btn-primary float-end " onClick={onAdd}>
+            Ajouter
+          </button>
+        </div>
+      </div>
+
+      <div className="row px-3 mt-1">
+        {items.map((item) => (
+          <SingleTask
+            key={item.id}
+            item={item}
+            onDelete={onDeleteMany}
+            onView={onViewMany}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 

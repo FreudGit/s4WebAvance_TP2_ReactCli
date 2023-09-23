@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 
+//mode = "READONLY", 'EDIT', 'ADD'
 function ProductModale({
   showModal,
   onCloseModal,
   onSubmit,
   product,
-  readOnly = true,
+  mode = "VIEW",
+  onAdd,
 }) {
+  console.log("mode", mode);
+  console.log("product", product);
   const [formData, setFormData] = useState({
     nom: "",
     description: "",
@@ -15,12 +19,21 @@ function ProductModale({
   });
 
   useEffect(() => {
+    
     if (product) {
       setFormData({
         nom: product.nom || "",
         description: product.description || "",
         prix: product.prix || 0,
         categorie: product.categorie || "",
+      });
+    } else {
+      // Réinitialisation de l'état du formulaire lorsque le modal est ouvert
+      setFormData({
+        nom: "",
+        description: "",
+        prix: 0,
+        categorie: "",
       });
     }
   }, [product]);
@@ -34,9 +47,12 @@ function ProductModale({
   };
 
   const handleSubmit = (e) => {
+    console.log("handleSubmit");
     e.preventDefault();
-    // Vous pouvez gérer l'envoi du formulaire ici, par exemple, en appelant une fonction pour mettre à jour le produit.
+    onAdd(formData);
+    // Vous pouvez gérer l'envoi du formulaire ici en fonction du mode.
     console.log("Formulaire soumis avec les données :", formData);
+    onCloseModal();
   };
 
   return (
@@ -50,7 +66,11 @@ function ProductModale({
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Modifier un Produit</h5>
+                <h5 className="modal-title">
+                  {mode === "EDIT"
+                    ? "Modifier un Produit"
+                    : "Ajouter un Produit"}
+                </h5>
                 <button
                   type="button"
                   className="close"
@@ -74,7 +94,7 @@ function ProductModale({
                       name="nom"
                       value={formData.nom}
                       onChange={handleChange}
-                      readOnly={readOnly}
+                      readOnly={mode === "VIEW"} // Lecture seule uniquement en mode READONLY
                     />
                   </div>
                   <div className="mb-3">
@@ -88,7 +108,7 @@ function ProductModale({
                       value={formData.description}
                       onChange={handleChange}
                       rows="4"
-                      readOnly={readOnly}
+                      readOnly={mode === "VIEW"} // Lecture seule uniquement en mode READONLY
                     ></textarea>
                   </div>
                   <div className="mb-3">
@@ -102,7 +122,7 @@ function ProductModale({
                       name="prix"
                       value={formData.prix}
                       onChange={handleChange}
-                      readOnly={readOnly}
+                      readOnly={mode === "READONLY"} // Lecture seule uniquement en mode READONLY
                     />
                   </div>
                   <div className="mb-3">
@@ -116,14 +136,16 @@ function ProductModale({
                       name="categorie"
                       value={formData.categorie}
                       onChange={handleChange}
-                      readOnly={readOnly}
+                      readOnly={mode === "VIEW"} // Lecture seule uniquement en mode READONLY
                     />
                   </div>
-                  {/* <input
-                    type="submit"
-                    className="btn btn-primary"
-                    value="Modifier"
-                  /> */}
+                  {mode !== "VIEW" && (
+                    <input
+                      type="submit"
+                      className="btn btn-primary"
+                      value={mode === "EDIT" ? "Modifier" : "Ajouter"} // Le texte du bouton dépend du mode
+                    />
+                  )}
                 </form>
               </div>
               <div className="modal-footer">
@@ -135,11 +157,6 @@ function ProductModale({
                 >
                   Fermer
                 </button>
-                {!readOnly && (
-                  <button type="button" className="btn btn-primary">
-                    Enregistrer
-                  </button>
-                )}
               </div>
             </div>
           </div>
