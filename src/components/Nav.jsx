@@ -18,23 +18,16 @@ function Nav() {
             </Link>
           </li>
           <li className="nav-item">
-            {/* <a className="nav-link" href="/produits">Produits</a> */}
             <Link to="/produits" className="nav-link">
               Produits(JSON Local)
             </Link>
           </li>
           <li className="nav-item">
-            {/* <a className="nav-link" href="/produits">Produits</a> */}
-            <Link to="/produits" className="nav-link">
+            <Link to="/produitsJsonRemote" className="nav-link">
               Produits(JSON Remote)
             </Link>
           </li>
-          <li className="nav-item">
-            {/* <a className="nav-link" href="/about">À propos</a> */}
-            <Link to="/about" className="nav-link">
-              À propos
-            </Link>
-          </li>
+         
         </ul>
       </div>
     </nav>
