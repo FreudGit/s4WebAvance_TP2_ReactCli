@@ -31,12 +31,12 @@ npm install bootstrap --save
 npm install react-icons --save
 npm i react-router-dom
 ```
-- [ ] • Un menu de navigation entre les pages (Accueil / produits) 
-- [ ] • Pour  la  conception  (CSS),  vous  pouvez  utiliser  le  framework  bootstrap (vanilla, aucun modèle autorisé) ou développer votre propre css. 
+- [x] • Un menu de navigation entre les pages (Accueil / produits) 
+- [x] • Pour  la  conception  (CSS),  vous  pouvez  utiliser  le  framework  bootstrap (vanilla, aucun modèle autorisé) ou développer votre propre css. 
 
 
 Deux Livraisons : 
-- [ ] • Premier  scénario  -  Créez  une  version  de  production  avec  le  premier scénario et la publiez sur WebDev. 
+- [x] • Premier  scénario  -  Créez  une  version  de  production  avec  le  premier scénario et la publiez sur WebDev. 
 ```
 -Ajouter dans package.json: ", homepage": "https://e2296133.webdev.cmaisonneuve.qc.ca/react/"
 npm run build
@@ -50,12 +50,12 @@ npm i json-server
 -Ajouter dans package.json: "server": "json-server --watch db.json --port 5000"
 npm run server
 ```
-- [ ] Enregistrez une  courte  vidéo  de  votre  écran  (max  3  min)  avec  le  projet  en  cours d'exécution sur votre environnement local. Présentez toutes les pages et fonctions au fur et à mesure que le côté serveur change. 
+- [x] Enregistrez une  courte  vidéo  de  votre  écran  (max  3  min)  avec  le  projet  en  cours d'exécution sur votre environnement local. Présentez toutes les pages et fonctions au fur et à mesure que le côté serveur change. 
 
-- [ ] Envoyez la vidéo avec le projet
+- [x] Envoyez la vidéo avec le projet
 
    
-- [ ] 15.Enregistrez le projet avec une extension ZIP et ajouter la documentation dansla racine (1pt)
+- [x] 15.Enregistrez le projet avec une extension ZIP et ajouter la documentation dans la racine (1pt)
 
 
 DOCUMENTATION

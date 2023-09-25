@@ -207,7 +207,6 @@ function App() {
   };
 
   const deleteItemLocal = async (id) => {
-    console.log("delete", id);
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
@@ -215,7 +214,6 @@ function App() {
   /////////////   UI
 
   const showModale_editItem = async (item, mode) => {
-    console.log("func editItem", "mode", mode);
     setCurrentItem(item);
     setShowModal(true);
     setShowModal_ReadOnly(mode === "VIEW");
@@ -223,11 +221,7 @@ function App() {
   };
 
   const showModale_addItem = async (item, readOnly) => {
-    console.log("func showModale_addItem");
     setCurrentItem(false);
-    console.log(currentItem);
-    console.log(readOnly);
-    console.log("func addItem", "readonly:", readOnly);
     setShowModal_Mode("ADD");
     setShowModal(true);
   };
