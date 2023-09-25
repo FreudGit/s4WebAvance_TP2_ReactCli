@@ -2,7 +2,7 @@
   "produits": [
     {
       "id": 3,
-      "nom": "Python",
+      "nom": "Pythonee",
       "description": "Un langage de programmation interprété, polyvalent et largement utilisé dans le développement web et scientifique.",
       "prix": 0,
       "categorie": "Langage de programmation"
@@ -55,6 +55,13 @@
       "description": "Un logiciel de création de graphiques vectoriels utilisé par les illustrateurs et les designers.",
       "prix": 239.99,
       "categorie": "Logiciel de design"
+    },
+    {
+      "nom": "qw",
+      "description": "qw",
+      "prix": 0,
+      "categorie": "qw",
+      "id": 11
     }
   ]
 }
