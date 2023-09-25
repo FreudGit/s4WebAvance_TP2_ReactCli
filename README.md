@@ -16,9 +16,10 @@ par:  François Hébert (e2296133)
 RÉFÉRENCES:
 
 - LIEN VERS LE GITHUB: **[GIT DU PROJET](https://github.com/fhmaisonneuve/s4WebAvance_TP2_ReactCli)**
+
 - LIEN VERS LE PROJET(WEBDEV): **[https://e2296133.webdev.cmaisonneuve.qc.ca/webavancetp2/](https://e2296133.webdev.cmaisonneuve.qc.ca/webavancetp2/)** 
 
-
+- LIEN VERS LE VIDEO: **[SCREENRECORD](https://github.com/fhmaisonneuve/s4WebAvance_TP2_ReactCli/raw/master/__requis/s4webavance_presentation.mp4)**
  ---  
 
 ## REQUIS DÉMANDÉS
@@ -58,9 +59,3 @@ npm run server
 - [x] 15.Enregistrez le projet avec une extension ZIP et ajouter la documentation dans la racine (1pt)
 
 
-DOCUMENTATION
-
--- LIEN VERS LE VIDEO: **[SCREENRECORD]()**
-
-- LIEN VERS LE GITHUB: **[GIT DU PROJET](https://github.com/fhmaisonneuve/s4WebAvance_TP2_ReactCli)**
-- LIEN VERS LE PROJET(WEBDEV): **[https://e2296133.webdev.cmaisonneuve.qc.ca/webavancetp2/](https://e2296133.webdev.cmaisonneuve.qc.ca/webavancetp2/)** 
