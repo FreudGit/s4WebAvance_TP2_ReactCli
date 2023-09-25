@@ -1,0 +1,60 @@
+{
+  "produits": [
+    {
+      "id": 3,
+      "nom": "Python",
+      "description": "Un langage de programmation interprété, polyvalent et largement utilisé dans le développement web et scientifique.",
+      "prix": 0,
+      "categorie": "Langage de programmation"
+    },
+    {
+      "id": 4,
+      "nom": "Microsoft Excel",
+      "description": "Une application de feuilles de calcul puissante utilisée pour l'analyse de données et la gestion de projet.",
+      "prix": 129.99,
+      "categorie": "Logiciel de gestion de données"
+    },
+    {
+      "id": 5,
+      "nom": "React",
+      "description": "Une bibliothèque JavaScript populaire pour la création d'interfaces utilisateur interactives.",
+      "prix": 0,
+      "categorie": "Framework de programmation"
+    },
+    {
+      "id": 6,
+      "nom": "AutoCAD",
+      "description": "Un logiciel de conception assistée par ordinateur (CAO) utilisé dans l'architecture et l'ingénierie.",
+      "prix": 699.99,
+      "categorie": "Logiciel de CAO"
+    },
+    {
+      "id": 7,
+      "nom": "Java",
+      "description": "Un langage de programmation polyvalent et populaire utilisé dans le développement d'applications web et mobiles.",
+      "prix": 0,
+      "categorie": "Langage de programmation"
+    },
+    {
+      "id": 8,
+      "nom": "Sublime Text",
+      "description": "Un éditeur de texte léger et personnalisable apprécié des développeurs.",
+      "prix": 70,
+      "categorie": "IDE"
+    },
+    {
+      "id": 9,
+      "nom": "Angular",
+      "description": "Un framework JavaScript pour la création d'applications web dynamiques.",
+      "prix": 0,
+      "categorie": "Framework de programmation"
+    },
+    {
+      "id": 10,
+      "nom": "Adobe Illustrator",
+      "description": "Un logiciel de création de graphiques vectoriels utilisé par les illustrateurs et les designers.",
+      "prix": 239.99,
+      "categorie": "Logiciel de design"
+    }
+  ]
+}

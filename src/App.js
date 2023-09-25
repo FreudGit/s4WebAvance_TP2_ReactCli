@@ -20,8 +20,8 @@ function App() {
     LOCALVAR_ASJSON: "localvar_AsJSON",
     REMOTEJSON: "remoteJSON",
   };
-  const SELECTED_TP_REMOTEVERSION=TP_REMOTEVERSION.LOCALVAR;
-  //const SELECTED_TP_REMOTEVERSION=TP_REMOTEVERSION.REMOTEJSON;
+  //const SELECTED_TP_REMOTEVERSION=TP_REMOTEVERSION.LOCALVAR;
+  const SELECTED_TP_REMOTEVERSION=TP_REMOTEVERSION.REMOTEJSON;
 
   ////////////////////////////////////////////////////////
   /////////////   LOAD DATAS
@@ -134,7 +134,7 @@ function App() {
 
   //FETCH TASKS REMOTE (JSON )
   const fetchItemsRemote = async () => {
-    const res = await fetch("http://localhost:5000/tasks");
+    const res = await fetch("http://localhost:5000/produits");
     const data = await res.json();
     return data;
   };
@@ -143,7 +143,7 @@ function App() {
   /////////////   ADD DATAS
 
   const addItemRemote = async (task) => {
-    const res = await fetch("http://localhost:5000/tasks", {
+    const res = await fetch("http://localhost:5000/produits", {
       method: "post",
       headers: {
         "content-type": "application/json",
@@ -193,7 +193,7 @@ function App() {
   /////////////   DELETE DATAS
 
   const deleteItemRemote = async (id) => {
-    await fetch(`http://localhost:5000/tasks/${id}`, {
+    await fetch(`http://localhost:5000/produits/${id}`, {
       method: "DELETE",
     });
     setTasks(tasks.filter((task) => task.id !== id));
@@ -268,7 +268,7 @@ function App() {
                 tasks.length > 0 ? (
                   <ManyTasks
                     items={tasks}
-                    onDeleteMany={deleteItemLocal}
+                    onDeleteMany={deleteItemRemote}
                     onViewMany={showModale_editItem}
                     onAdd={showModale_addItem}
                   />

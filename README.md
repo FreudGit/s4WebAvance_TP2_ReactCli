@@ -39,6 +39,11 @@ Deux Livraisons :
 - [ ] • Premier  scénario  -  Créez  une  version  de  production  avec  le  premier scénario et la publiez sur WebDev. 
 
 - [ ] • Deuxième scénario - Maintenez le même projet et les mêmes fonctionnalités mais maintenant vous allez le tester avec un serveur JSON (simulé),  cette  dernière  version  doit  être  publiée  sur  GitHub.  
+```
+npm i json-server
+-Ajouter dans package.json: "server": "json-server --watch db.json --port 5000"
+npm run server
+```
 - [ ] Enregistrez une  courte  vidéo  de  votre  écran  (max  3  min)  avec  le  projet  en  cours d'exécution sur votre environnement local. Présentez toutes les pages et fonctions au fur et à mesure que le côté serveur change. 
 
 - [ ] Envoyez la vidéo avec le projet
