@@ -18,7 +18,7 @@ function App() {
   //**
   // TP_REMOTEVERSION
   //  * LOCALVAR: use local variable
-  // * LOCALVAR_ASJSON: use local json 
+  // * LOCALVAR_ASJSON: use local json
   // * REMOTEJSON: use remote json
   //** */
   const TP_REMOTEVERSION = {
@@ -50,8 +50,6 @@ function App() {
     };
     getTasks();
   }, []);
-
-
 
   //////////////////////////////////////////////////////////
   // FETCH
@@ -154,8 +152,6 @@ function App() {
     return data;
   };
 
-
-
   ////////////////////////////////////////////////////////
   /////////////   ADD DATAS
 
@@ -181,20 +177,14 @@ function App() {
   };
 
   ////////////////////////////////////////////////////////
-  /////////////   EDIT DATAS
+  /////////////   UPDATE DATAS
 
   const updateItemLocal = (item) => {
-    console.log("func updateItemLocal", item);
     setTasks(tasks.map((itemMap) => (itemMap.id === item.id ? item : itemMap)));
-
-    console.log(tasks);
     setCurrentItem(null);
   };
 
   const updateItemREMOTE = async (item) => {
-    // console.log(id)
-    const taskToToggle = await fetchItemsRemote(item.id);
-    //const updTask = {...taskToToggle, reminder: !taskToToggle.reminder}
     const res = await fetch(`http://localhost:5000/produits/${item.id}`, {
       method: "PUT",
       headers: {
@@ -255,7 +245,6 @@ function App() {
     <BrowserRouter>
       <div>
         <Nav />
-
         <ProductModale
           showModal={showModal}
           readOnly={showModal_ReadOnly}
@@ -275,11 +264,12 @@ function App() {
           mode={showModal_Mode}
         />
         <Routes>
+
           <Route
             path="/Produits"
             element={
-              SELECTEDTP_VERSION == TP_REMOTEVERSION.LOCALVAR ||
-              SELECTEDTP_VERSION == TP_REMOTEVERSION.LOCALVAR_ASJSON ? (
+              SELECTEDTP_VERSION === TP_REMOTEVERSION.LOCALVAR ||
+              SELECTEDTP_VERSION === TP_REMOTEVERSION.LOCALVAR_ASJSON ? (
                 tasks.length > 0 ? (
                   <ManyTasks
                     items={tasks}

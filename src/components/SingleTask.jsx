@@ -1,6 +1,6 @@
 import React from "react";
-import { FaTimes, FaAngleDoubleRight} from "react-icons/fa";
-import { CiEdit } from "react-icons/ci"; // Import de l'icône d'édition
+import { FaTimes, FaAngleDoubleRight } from "react-icons/fa";
+import { CiEdit } from "react-icons/ci"; 
 
 const SingleTask = ({ item, onDelete, onView }) => {
   return (
@@ -13,18 +13,20 @@ const SingleTask = ({ item, onDelete, onView }) => {
         </div>
         <div className="card-footer d-flex justify-content-between align-items-center">
           <div>
-            <p className="card-text small text-secondary">Catégorie: {item.categorie}</p>
+            <p className="card-text small text-secondary">
+              Catégorie: {item.categorie}
+            </p>
           </div>
           <div>
             <button
               className="btn btn-primary btn-sm me-1"
-              onClick={() => onView(item, 'EDIT')}
+              onClick={() => onView(item, "EDIT")}
             >
               <CiEdit /> Éditer
             </button>
             <button
               className="btn btn-primary btn-sm me-1"
-              onClick={() => onView(item, 'VIEW')}
+              onClick={() => onView(item, "VIEW")}
             >
               <FaAngleDoubleRight /> Détails
             </button>

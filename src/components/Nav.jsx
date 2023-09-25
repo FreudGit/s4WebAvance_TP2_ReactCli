@@ -10,7 +10,6 @@ function Nav() {
         </a>
         <ul className="navbar-nav flex-row">
           {" "}
-          {/* Ajoutez la classe flex-row ici */}
           <li className="nav-item">
             {/* <a className="nav-link" href="/">Home</a> */}
             <Link to="/" className="nav-link">
@@ -22,12 +21,6 @@ function Nav() {
               Produits(JSON Local)
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/produitsJsonRemote" className="nav-link">
-              Produits(JSON Remote)
-            </Link>
-          </li>
-          
         </ul>
       </div>
     </nav>

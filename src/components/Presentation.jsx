@@ -38,8 +38,7 @@ const PresentationPage = () => {
           client est là pour vous aider.
         </p>
         <p>
-          Email :{" "}
-          <a href="mailto:contact@votresite.com">contact@votresite.com</a>
+          Email : <a href="mailto:">francois@hebert.com</a>
         </p>
       </div>
     </div>
