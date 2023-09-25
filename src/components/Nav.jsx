@@ -18,7 +18,7 @@ function Nav() {
           </li>
           <li className="nav-item">
             <Link to="/produits" className="nav-link">
-              Produits(JSON Local)
+              Produits
             </Link>
           </li>
         </ul>

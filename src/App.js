@@ -27,7 +27,7 @@ function App() {
     REMOTEJSON: "remoteJSON",
   };
 
-  //const SELECTED_TP_REMOTEVERSION=TP_REMOTEVERSION.LOCALVAR;
+  //const SELECTEDTP_VERSION=TP_REMOTEVERSION.LOCALVAR;
   const SELECTEDTP_VERSION = TP_REMOTEVERSION.REMOTEJSON;
 
   ////////////////////////////////////////////////////////

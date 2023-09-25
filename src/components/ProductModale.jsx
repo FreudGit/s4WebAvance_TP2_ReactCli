@@ -9,8 +9,6 @@ function ProductModale({
   mode = "VIEW",
   onAdd,
 }) {
-  console.log("mode", mode);
-  console.log("product", product);
   const [formData, setFormData] = useState({
     nom: "",
     description: "",
@@ -70,7 +68,9 @@ function ProductModale({
                 <h5 className="modal-title">
                   {mode === "EDIT"
                     ? "Modifier un Produit"
-                    : "Ajouter un Produit"}
+                    : mode === "ADD"
+                    ? "Ajouter un Produit"
+                    : "Voir un Produit"}
                 </h5>
                 <button
                   type="button"
@@ -172,4 +172,3 @@ function ProductModale({
 }
 
 export default ProductModale;
-
